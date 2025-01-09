@@ -47,6 +47,8 @@ subprojects {
         annotationProcessor lombok
         testAnnotationProcessor lombok
 
+        annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
         testImplementation "$boot:spring-boot-starter-test"
     }
 
@@ -55,9 +57,4 @@ subprojects {
     }
 }
 
-project(':movie-api') {
-    dependencies {
-        implementation project(':movie-common')
-    }
-}
 
