@@ -24,11 +24,10 @@ public class MovieDto {
         }
 
         public static Response from(MovieInfo.Get info) {
-            return null;
-//            return Response.of(
-//                    info.id(), info.title(),
-//                    info.releaseDate(), info.thumbnailUrl(),
-//            );
+            return Response.of(
+                    info.id(), info.title(), info.releaseDate(), info.thumbnailUrl(),
+                    info.runningTime(), info.filmRating(), info.genre()
+            );
         }
     }
 

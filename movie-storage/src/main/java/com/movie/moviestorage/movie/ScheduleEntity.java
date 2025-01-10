@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -31,5 +32,17 @@ public class ScheduleEntity extends BaseEntity {
 
     private LocalDateTime startTime;
     private LocalDateTime endTime;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ScheduleEntity scheduleEntity)) return false;
+        return id != null && id.equals(scheduleEntity.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
 }

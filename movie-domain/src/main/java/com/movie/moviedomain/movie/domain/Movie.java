@@ -2,14 +2,13 @@ package com.movie.moviedomain.movie.domain;
 
 import com.movie.moviedomain.enums.FilmRating;
 import com.movie.moviedomain.enums.Genre;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
-@NoArgsConstructor
+@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Movie {
 
     private Long id;

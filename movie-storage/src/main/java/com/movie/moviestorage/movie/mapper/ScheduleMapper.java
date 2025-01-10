@@ -13,6 +13,7 @@ public class ScheduleMapper {
         return Schedule.of(
                 scheduleEntity.getId(),
                 TheaterMapper.from(scheduleEntity.getTheater()),
+                ScreenMapper.from(scheduleEntity.getScreen()),
                 MovieMapper.from(scheduleEntity.getMovie()),
                 scheduleEntity.getStartTime(),
                 scheduleEntity.getEndTime()

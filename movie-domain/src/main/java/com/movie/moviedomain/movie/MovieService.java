@@ -10,7 +10,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MovieService {
 
-    private final MovieRepository movieRepository;
+//    private final MovieRepository movieRepository;
 
     public List<MovieInfo.Get> getMovies() {
         return null;

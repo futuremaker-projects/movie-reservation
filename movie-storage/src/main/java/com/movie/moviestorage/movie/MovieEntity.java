@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -37,5 +38,17 @@ public class MovieEntity extends BaseEntity {
 
     @Column(columnDefinition = "VARCHAR(10) NOT NULL COMMENT '러닝 타임'")
     private String runningTime;                 // 러닝 타임
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MovieEntity movieEntity)) return false;
+        return id != null && id.equals(movieEntity.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
 }

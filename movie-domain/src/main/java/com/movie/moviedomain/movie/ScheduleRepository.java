@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ScheduleRepository {
 
-    List<Schedule> getSchedules();
+    List<Schedule> getSchedules(Long theaterId);
 
 }

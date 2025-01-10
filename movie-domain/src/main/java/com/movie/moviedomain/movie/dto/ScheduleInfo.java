@@ -3,34 +3,27 @@ package com.movie.moviedomain.movie.dto;
 import com.movie.moviedomain.movie.domain.Schedule;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class ScheduleInfo {
 
     public record Get(
             Long id, TheaterInfo.Get theater,
             ScreenInfo.Get screen, MovieInfo.Get movie,
-            LocalDateTime stateDate, LocalDateTime endDate
+            List<TimeTableInfo.Get> timeTables
     ) {
         public static Get of(Long id, TheaterInfo.Get theater,
                              ScreenInfo.Get screen, MovieInfo.Get movie,
-                             LocalDateTime stateDate, LocalDateTime endDate) {
-            return new Get(id, theater, screen, movie, stateDate, endDate);
+                             List<TimeTableInfo.Get> timeTables) {
+            return new Get(id, theater, screen, movie, timeTables);
         }
 
         public static Get of(Long id, TheaterInfo.Get theater,
                              MovieInfo.Get movie,
-                             LocalDateTime stateDate, LocalDateTime endDate) {
-            return new Get(id, theater, null, movie, stateDate, endDate);
+                             List<TimeTableInfo.Get> timeTables) {
+            return new Get(id, theater, null, movie, timeTables);
         }
 
-        public static Get from(Schedule schedule) {
-            return Get.of(
-                    schedule.getId(),
-                    TheaterInfo.Get.from(schedule.getTheater()),
-                    MovieInfo.Get.from(schedule.getMovie()),
-                    schedule.getStartTime(), schedule.getEndTime()
-            );
-        }
     }
 
 }
