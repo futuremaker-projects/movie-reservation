@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ScheduleJpaRepository extends JpaRepository<ScheduleEntity, Long> {
 
-    @EntityGraph(attributePaths = {"theater"}, type = EntityGraph.EntityGraphType.LOAD)
+    @EntityGraph(attributePaths = {"theater", "screen", "movie"}, type = EntityGraph.EntityGraphType.LOAD)
     List<ScheduleEntity> findAll();
 
 }

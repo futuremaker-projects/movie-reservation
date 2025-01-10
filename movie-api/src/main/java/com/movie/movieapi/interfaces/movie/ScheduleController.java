@@ -1,7 +1,7 @@
 package com.movie.movieapi.interfaces.movie;
 
 import com.movie.movieapi.interfaces.movie.dto.ScheduleDto;
-import com.movie.movieapi.response.Response;
+import com.movie.moviedomain.response.Response;
 import com.movie.moviedomain.movie.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

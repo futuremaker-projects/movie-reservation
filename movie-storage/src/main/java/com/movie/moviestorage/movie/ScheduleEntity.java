@@ -21,7 +21,9 @@ public class ScheduleEntity extends BaseEntity {
     @JoinColumn(name = "theater_id")
     private TheaterEntity theater;
 
-    private Long screenId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "screen_id")
+    private ScreenEntity screen;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "movie_id")
@@ -29,7 +31,5 @@ public class ScheduleEntity extends BaseEntity {
 
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-
-
 
 }

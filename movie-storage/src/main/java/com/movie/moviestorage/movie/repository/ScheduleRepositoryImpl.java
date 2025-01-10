@@ -2,6 +2,7 @@ package com.movie.moviestorage.movie.repository;
 
 import com.movie.moviedomain.movie.ScheduleRepository;
 import com.movie.moviedomain.movie.domain.Schedule;
+import com.movie.moviestorage.movie.mapper.ScheduleMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +16,8 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
 
     @Override
     public List<Schedule> getSchedules() {
-        return null;
-//        return scheduleJpaRepository.findAll();
+        return scheduleJpaRepository.findAll().stream()
+                .map(ScheduleMapper::from)
+                .toList();
     }
 }

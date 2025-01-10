@@ -1,4 +1,4 @@
-package com.movie.movieapi.response;
+package com.movie.moviedomain.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
